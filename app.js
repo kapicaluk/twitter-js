@@ -1,12 +1,14 @@
 const http = require('http')
 const express = require('express');
+
+// add tweetBank module
+const tweetBank = require('./tweetBank')
 const app = express(); // creates an instance of an express application
 const nunjucks = require('nunjucks');
-const people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Son'}];
-
+const people = [{ name: 'Full' }, { name: 'Stacker' }, { name: 'Son' }];
 const server = http.createServer();
-
 const PORT = 3000;
+
 
 server.listen(PORT, function() {
     console.log('server listening. . . ')
@@ -21,7 +23,7 @@ app.use(function(req, res, next) {
 
 app.get('/', function(req, res) {
     // res.send('blaaa');
-    res.render( 'index', {title: 'Hall of Fame', people: people} );
+    res.render('index', { title: 'Hall of Fame', people: people });
 })
 
 app.get('/news', function(req, res) {
@@ -45,4 +47,3 @@ nunjucks.render('index.html', data, function(err, output) {
 
 app.set('view engine', 'html'); // have res.render work with html files
 app.engine('html', nunjucks.render); // when giving html files to res.render, tell it to use nunjucks
-
