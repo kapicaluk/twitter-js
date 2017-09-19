@@ -1,6 +1,7 @@
 const http = require('http')
 const express = require( 'express' );
 const app = express(); // creates an instance of an express application
+const morgan = require('morgan');
 
 
 const server = http.createServer();
