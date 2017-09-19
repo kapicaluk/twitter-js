@@ -2,9 +2,10 @@
   "name": "",
   "version": "",
   "dependencies": {
-    "express": "^4.15.4"
+    "express": "^4.15.4",
+    "nunjucks": "^3.0.1"
   },
   "scripts": {
-  	"start": "nodemon app.js"
+    "start": "nodemon app.js"
   }
 }
